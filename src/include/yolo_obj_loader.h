@@ -14,6 +14,7 @@ namespace yolo
 {
   class ObjLoader {
   public:
+    ObjLoader() = delete;
     ObjLoader(const std::string& filePath);
 
     std::vector<std::tuple<real_t, real_t, real_t>> getVertexPositions() const;
