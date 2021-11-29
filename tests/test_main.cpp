@@ -4,7 +4,7 @@
 
 int main(int argc, char** argv)
 {
-  std::cout << "TinyTracerTests" << std::endl;
+  std::cout << "Yolo Loader Tests" << std::endl;
   ::testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }
