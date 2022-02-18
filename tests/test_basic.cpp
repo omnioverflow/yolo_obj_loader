@@ -1,25 +1,23 @@
 #include "gtest/gtest.h"
 
-#include "color.h"
-#include "bmp/bmp.h"
-#include "io/filesystem.h"
+#include "yolo_obj_loader.h"
 
-namespace engine
+namespace yolo
 {
   namespace test
   {
-    class BmpTest : public ::testing::Test
+    class YoloObjLoaderTest : public ::testing::Test
     {
     protected:
       // You can remove any or all of the following functions if their bodies would
       // be empty.
 
-     BmpTest() 
+     YoloObjLoaderTest() 
      {
         // You can do set-up work for each test here.
      }
 
-      ~BmpTest() override 
+      ~YoloObjLoaderTest() override 
       {
         // You can do clean-up work that doesn't throw exceptions here.
       }
@@ -45,22 +43,20 @@ namespace engine
 
     protected:
 
-      static constexpr char TEST_DIR[] = u8"bmp_test";
-      static constexpr char BLACK_SQUARE_FILE[] = u8"black_square";
-    }; // class BmpTest
+      static constexpr auto TEST_DATA_DIR = "../data";
+      static constexpr auto TETRAHEDRON = "tetrahedron.obj";
+    }; // class YoloObjLoaderTest
 
-    TEST_F(BmpTest, BmpRead)
+    TEST_F(YoloObjLoaderTest, ObjSimpleRead)
     {
-      std::string s = TEST_DIR;
-//      Bmp bmp = Bmp::read(BLACK_SQUARE_FILE);
-      // all pixels must be black
-
+      ObjLoader ldr;
+      ASSERT_TRUE(true);
     }
 
     // Tests that write() method succeeds in writing to a file
-    TEST_F(BmpTest, BmpWrite)
+    TEST_F(YoloObjLoaderTest, ObjReadVertices)
     {
     }
 
   }  // namespace test
-}  // namespace engine
+}  // namespace yolo
