@@ -61,5 +61,11 @@ target_sources (${LIB_NAME}
   PUBLIC
     ${HEADER_LIST})
 
-target_link_libraries (${LIB_TESTS} gtest_main)
+add_executable (${LIB_TESTS} 
+                tests/test_main.cpp
+                tests/test_basic.cpp)
+target_link_libraries (${LIB_TESTS} gtest gtest_main ${LIB_NAME})
 # add_test (NAME example_test COMMAND example)
+
+# copy test data dir
+file (COPY "tests/data" DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/data)
